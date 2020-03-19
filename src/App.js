@@ -1,16 +1,24 @@
 import React from 'react';
-import ErrorBoundary from './ErrorBoundary';
+import {Route} from 'react-router-dom';
+import LandingPage from './LandingPage/LandingPage'
+import SignInPage from './SignInPage/SignInPage'
+import ChatPage from './ChatPage/ChatPage'
+
+
+// import ErrorBoundary from './ErrorBoundary';
 
 
 function App() {
   return (
-    <ErrorBoundary>
+    // <ErrorBoundary>
       <div className="App">
 
-        <h3> Cross Chat</h3>
-        
+       <Route exact path='/' component={LandingPage}/>
+       <Route exact path='/SignInPage' component={SignInPage}/>
+       <Route exact path='/ChatPage' component={ChatPage}/>
+
       </div>
-    </ErrorBoundary>
+    // </ErrorBoundary>
     
   );
 }
