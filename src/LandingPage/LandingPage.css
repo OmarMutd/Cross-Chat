@@ -1,0 +1,29 @@
+.landing-page {
+    border-radius: 30px; 
+    background: gray;
+    padding: 20px;
+    width: 250px;
+    height: 150px;
+    margin: auto;
+    width: 50%;
+    position: relative;
+    top: 250px;
+}
+
+.navbar {
+    width: 100%;
+	float: left;
+	margin: 0 0 1em 0;
+	padding: 0;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #ccc;
+}
+
+.go-to-sign-in {
+    cursor: pointer;
+}
+
+.landing {
+    text-decoration: underline;
+    cursor: pointer;
+}
