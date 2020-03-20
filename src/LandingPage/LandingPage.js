@@ -21,6 +21,10 @@ export class LandingPage extends Component {
     <Link to="/SignInPage">Go to Sign-in page</Link>
     </button>
 
+    <button class='create-account'>
+    <Link to="/CreateAnAccount">Create An Account</Link>
+    </button>
+
       </div>
       </div>
 

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
+import { Link } from 'react-router-dom';
 import './SignInPage.css'
 
 export class SignInPage extends Component {
@@ -18,7 +19,11 @@ export class SignInPage extends Component {
         <input type="text" placeholder="Enter Username" name="user" required />
         <label for="pass"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pass" required />
-        <button  className='sign-in' type="submit">Sign in</button>
+
+        <button  className='sign-in' type="submit">
+        <Link to="/ChatPage">Sign In</Link>
+        </button>
+
         <p className='google-sign-in'>Click here to sign in with google</p>
         </div>
     </form>
