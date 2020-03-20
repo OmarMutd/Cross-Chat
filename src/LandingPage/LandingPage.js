@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-// Fragments
 import './LandingPage.css'
+import { Link } from "react-router-dom";
+// Fragments
+
 
 export class LandingPage extends Component {
     render() {
@@ -14,9 +16,14 @@ export class LandingPage extends Component {
 
       <div class='landing-page'>
        <p > Welcome to "Chat-App"... This is a cool little full-stack app built with react, node/express & postgreSQL. This app allows you to chat with other users in realtime!</p>
-    <button class='go-to-sign-in'> Go to Sign-in page</button>    
+
+    <button class='go-to-sign-in'>
+    <Link to="/SignInPage">Go to Sign-in page</Link>
+    </button>
+
       </div>
       </div>
+
         )
     }
 }
