@@ -16,9 +16,9 @@ function App() {
       <div className="App">
        <Switch>
        <Route exact path='/' component={LandingPage}/>
-       <Route exact path='/SignInPage' component={SignInPage}/>
-       <Route exact path='/ChatPage' component={ChatPage}/>
-       <Route exact path='/CreateAnAccount' component={CreateAnAccount}/>
+       <Route path='/SignInPage' component={SignInPage}/>
+       <Route path='/ChatPage' component={ChatPage}/>
+       <Route path='/CreateAnAccount' component={CreateAnAccount}/>
        <Route component={PageDoesNotExist}/>
        </Switch>
       </div>

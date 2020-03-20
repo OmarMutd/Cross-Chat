@@ -9,8 +9,13 @@ export class SignInPage extends Component {
 
     <nav >
         <ul className='navbar'>
+
         <li className='demo'> Demo</li> <br/>
-        <li className='landing'>Landing-Page</li>
+
+        <li className='landing'>
+        <Link to="/">Landing Page</Link>
+        </li>
+
         </ul>
     </nav>
 

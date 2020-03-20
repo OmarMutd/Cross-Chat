@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import  './ChatPage.css'
 
 export class ChatPage extends Component {
@@ -7,7 +8,9 @@ export class ChatPage extends Component {
             <div>
                 <nav>
                     <ul className='navbar'>
-                        <li className='log-out'> Log Out </li>
+                        <li className='log-out'>
+                        <Link to="/SignInPage">Log Out</Link> 
+                             </li>
                         <li class='dark-mode'> Enable Dark Mode</li>
                     </ul>
                 </nav>
@@ -30,20 +33,8 @@ export class ChatPage extends Component {
                     <label for="message">Enter message here:</label><br/>
                     <input type="text" id="message" name="message"/><br/>
 
-
-
                     </form>
-
                 </div>
-
-                
-                
-
-
-
-
-
-
             </div>
         )
     }
