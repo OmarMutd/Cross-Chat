@@ -9,7 +9,7 @@ import  './ChatPage.css'
 let socket = ";"
 
 export default function ChatPage({ location }) {
-    const CONNECTION = 'localhost:3000';
+    const CONNECTION = 'localhost:5000';
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
 
