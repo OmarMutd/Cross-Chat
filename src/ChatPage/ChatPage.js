@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import io from 'socket.io-client';
@@ -6,15 +6,28 @@ import  './ChatPage.css'
 
 
 
-export default function ChatPage({ location }) {
-    useEffect(() => {
-        const data = queryString.parse(location.search);
+let socket = ";"
 
-        console.log(data)
-    })
+export default function ChatPage({ location }) {
+    const CONNECTION = 'localhost:3000';
+    const [name, setName] = useState('');
+    const [room, setRoom] = useState('');
+
+    useEffect(() => {
+        const {name, room } = queryString.parse(location.search);
+
+        socket = io(CONNECTION);
+
+        setName(name);
+        setRoom(room);
+
+        console.log(socket);
+        // console.log(data)
+        // console.log(location.search)
+    }, [CONNECTION, location.search]);
     return (
         <div>
-            
+            <h1> Chat box</h1>
         </div>
     )
 }
