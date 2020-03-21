@@ -20,7 +20,14 @@ export default function ChatPage({ location }) {
 
         setName(name);
         setRoom(room);
+
         socket.emit('join', {name: name, room: room});
+
+        return () => {
+            socket.emit('disconnect');
+
+            socket.off();
+        }
 
         // console.log(socket);
         // console.log(data)
@@ -28,7 +35,7 @@ export default function ChatPage({ location }) {
     }, [CONNECTION, location.search]);
     return (
         <div>
-            <h1> Chat box</h1>
+            <h1> Chat box </h1>
         </div>
     )
 }
