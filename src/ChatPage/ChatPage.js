@@ -20,8 +20,9 @@ export default function ChatPage({ location }) {
 
         setName(name);
         setRoom(room);
+        socket.emit('join', {name: name, room: room});
 
-        console.log(socket);
+        // console.log(socket);
         // console.log(data)
         // console.log(location.search)
     }, [CONNECTION, location.search]);
