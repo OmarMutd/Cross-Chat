@@ -39,17 +39,26 @@ export default function ChatPage({ location }) {
 
      useEffect(() =>  {
          socket.on('message', (message) => {
+             setMessages([...messages, message])
 
          })
-     })
+     }, [messages])
 
 
+    const sendMessage = (event) => {
+        event.preventDefault();
+        if(message) {
+            socket.emit('sendMessage', message, () => setMessage(''))
+        }
+    }
 
-
-
+    console.log(message, messages);
     return (
         <div>
-            <h1> Chat box </h1>
+            <div>
+                <input value={message} onChange={(event) => setMessage(event.target.value)}
+                onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null} />
+            </div>
         </div>
     )
 }
