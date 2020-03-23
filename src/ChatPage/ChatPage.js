@@ -10,6 +10,8 @@ export default function ChatPage({ location }) {
     const CONNECTION = 'localhost:5000';
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
 
     useEffect(() => {
         const {name, room } = queryString.parse(location.search);
@@ -19,7 +21,9 @@ export default function ChatPage({ location }) {
         setName(name);
         setRoom(room);
 
-        socket.emit('join', {name: name, room: room});
+        socket.emit('join', {name: name, room: room}, () => {
+
+        });
 
         return () => {
             socket.emit('disconnect');
@@ -27,10 +31,22 @@ export default function ChatPage({ location }) {
             socket.off();
         }
 
+
         // console.log(socket);
         // console.log(data)
         // console.log(location.search)
     }, [CONNECTION, location.search]);
+
+     useEffect(() =>  {
+         socket.on('message', (message) => {
+
+         })
+     })
+
+
+
+
+
     return (
         <div>
             <h1> Chat box </h1>
