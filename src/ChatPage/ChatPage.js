@@ -61,8 +61,7 @@ export default function ChatPage({ location }) {
         <div>
             <div>
                 <ChatBar room={room}/>
-                <input value={message} onChange={(event) => setMessage(event.target.value)}
-                onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null} />
+                <Input message={message} sendMessage={sendMessage} setMessage={setMessage} />
             </div>
         </div>
     )
