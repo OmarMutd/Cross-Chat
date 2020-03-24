@@ -10,7 +10,7 @@ function Input({ message, sendMessage, setMessage }) {
            onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
            />
            
-        <button> </button>
+        <button onClick={(event) => sendMessage(event)}> Chat </button>
        </form>
     ) 
 }
