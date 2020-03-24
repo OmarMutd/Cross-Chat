@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import  './ChatPage.css'
+import ChatBar from '../ChatBar/ChatBar'
+import Input from '../Input/Input'
 
 let socket = ""
+//Change all io.emite to io.sockets.emite -> its a bit more discriptive
+//Add is loading to client side  webdv
 
 export default function ChatPage({ location }) {
     const CONNECTION = 'localhost:5000';
@@ -56,6 +60,7 @@ export default function ChatPage({ location }) {
     return (
         <div>
             <div>
+                <ChatBar room={room}/>
                 <input value={message} onChange={(event) => setMessage(event.target.value)}
                 onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null} />
             </div>
