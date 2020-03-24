@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import  './ChatPage.css'
+import Messages from '../Messages/Messages';
 import ChatBar from '../ChatBar/ChatBar'
 import Input from '../Input/Input'
 
@@ -61,6 +62,7 @@ export default function ChatPage({ location }) {
         <div>
             <div>
                 <ChatBar room={room}/>
+                <Messages messages={messages}/>
                 <Input message={message} sendMessage={sendMessage} setMessage={setMessage} />
             </div>
         </div>
