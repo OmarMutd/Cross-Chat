@@ -1,9 +1,10 @@
 import React from 'react'
-import './Messages.css'
+import './Message.css'
 
-function Message({ name, message: { text, user } }) {
+function Message( {message: { text, user}, name }) {
     let isSentByCurrentUser = false;
-    const trimmedName = name.trim.toLowerCase();
+    const trimmedName = name.trim().toLowerCase();
+
 
     if(user === trimmedName) {
       isSentByCurrentUser = true;
