@@ -8,7 +8,7 @@ function Messages({ name, messages }) {
         <ScrollToBottom>
         {messages.map((message, index) =>
          <div key={index}>
-            <Message names={name} message={message}/>
+            <Message name={name} message={message}/>
          </div>
          )}
         </ScrollToBottom>
