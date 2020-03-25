@@ -1,5 +1,6 @@
 import React from 'react'
 import './Message.css'
+import ReactEmoji from 'react-emoji';
 
 function Message( {message: { text, user}, name }) {
     let isSentByCurrentUser = false;
@@ -15,7 +16,7 @@ function Message( {message: { text, user}, name }) {
             <div className="current-user">
                 <p>{trimmedName}</p>
                 <div>
-                    <p> {text}</p>
+                    <p> { ReactEmoji.emojify(text) }</p>
                 </div>
             </div>
         )
@@ -23,7 +24,7 @@ function Message( {message: { text, user}, name }) {
             <div className="not-current">
             
             <div>
-                <p>{text}</p>
+                <p>{ ReactEmoji.emojify(text) }</p>
             </div>
             <p>{user}</p>
         </div>
