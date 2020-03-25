@@ -18,7 +18,7 @@ export class LandingPage extends Component {
        <p > Welcome to "Chat-App"... This is a cool little full-stack app built with react, node/express & postgreSQL. This app allows you to chat with other users in realtime!</p>
 
     <button className='go-to-sign-in'>
-    <Link to="/SignInPage">Go to Sign-in page</Link>
+    <Link to="/SignInPage">Log In</Link>
     </button>
 
     <button className='create-account'>

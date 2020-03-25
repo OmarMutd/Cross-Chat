@@ -1,13 +1,26 @@
-import React, { Component } from 'react'
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+import './CreateAnAccount.css'
 
-export class SignUpPage extends Component {
-    render() {
-        return (
-            <div>
-                This is the Sign Up Page.
-            </div>
-        )
-    }
-}
+function CreateAnAccount() {
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
 
-export default SignUpPage
+
+    return (
+        <div>
+            <h1>
+                <h2> Create An Account</h2>
+                <div><input placeholder="User" className="user-box" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
+                <div><input placeholder="Password" className="password-box" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
+                {/* <Link onClick={event => (!name || !password) ? event.preventDefault() : null} to='/SignInPage'> */}
+                <button>
+                 Create Account
+                </button>
+                {/* </Link> */}
+
+            </h1>
+        </div>
+    )}
+
+export default CreateAnAccount

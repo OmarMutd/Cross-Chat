@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import io from 'socket.io-client';
-import  './ChatPage.css'
+import  './ChatPage.css';
 import Messages from '../Messages/Messages';
-import ChatBar from '../ChatBar/ChatBar'
-import Input from '../Input/Input'
+import ChatBar from '../ChatBar/ChatBar';
+import Input from '../Input/Input';
+// import TotalUsers from '../TotalUsers/TotalUsers';
 
 let socket = ""
 //Change all io.emite to io.sockets.emite -> its a bit more discriptive
@@ -64,6 +65,7 @@ export default function ChatPage({ location }) {
                 <ChatBar room={room}/>
                 <Messages messages={messages} name={name}/>
                 <Input message={message} sendMessage={sendMessage} setMessage={setMessage} />
+                {/* <TotalUsers users={users}/> */}
             </div>
         </div>
     )
