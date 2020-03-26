@@ -3,6 +3,7 @@ import './ChatBar.css'
 
 
 function ChatBar( { room }) {
+    room = room.trim().toLowerCase();
     return (
         <div>
             <h2>{room}</h2>
