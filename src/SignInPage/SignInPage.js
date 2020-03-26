@@ -11,7 +11,7 @@ export default function SignInPage() {
     return (
         <div>
             <form>
-            <h1>
+
                 <div><input placeholder="User" className="user-box" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
                 <div><input placeholder="Password" className="password-box" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
                 <div><input placeholder="Room Name" className="room-box" type="text" onChange={(event) => setRoom(event.target.value)} ></input> </div>
@@ -20,7 +20,7 @@ export default function SignInPage() {
                  Sign In
                 </button>
                 </Link>
-            </h1>
+
             </form>
         </div>
     )
