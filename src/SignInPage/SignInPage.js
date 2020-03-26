@@ -15,7 +15,7 @@ export default function SignInPage() {
                 <div><input placeholder="Password" className="password-box" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
                 <div><input placeholder="Room Name" className="room-box" type="text" onChange={(event) => setRoom(event.target.value)} ></input> </div>
                 <Link onClick={event => (!name || !room || !password) ? event.preventDefault() : null} to={`ChatPage?name=${name}&room=${room}`}>
-                <button>
+                <button disabled={!name || !password || !room}>
                  Sign In
                 </button>
                 </Link>
