@@ -4,8 +4,8 @@ import React from 'react'
 function ManageAccount() {
     return (
         <div>
-           <button to="/DeleteAccount"> Delete Account</button>
-           <button to="/ChangePassword"> Change Password</button>
+           <button to="/DeleteAccount"> Delete Account </button>
+           <button to="/ChangePassword"> Change Password </button>
         </div>
     )
 }
