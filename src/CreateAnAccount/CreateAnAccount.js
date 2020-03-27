@@ -50,7 +50,7 @@ export default function CreateAnAccount() {
 
 
                 <Link onClick={event => (!name || !password) ? event.preventDefault() : null} to='/SignInPage'>
-                <button disabled={!name || !password}>
+                <button disabled={!name || !password || password !== matchpassword}>
                  Create Account
                 </button>
                 </Link>
