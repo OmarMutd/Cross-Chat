@@ -1,4 +1,10 @@
-Add Dark Mode
+Add Dark Mode -> Should Dark mode setting save for the user? 
 
 Form Validation with hooks
+
+Change all io.emite to io.sockets.emite -> its a bit more discriptive
+
+Add is loading to client side  webdv
+
+Add total users counter
 

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-// import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import  './ChatPage.css';
@@ -9,8 +8,6 @@ import Input from '../Input/Input';
 // import TotalUsers from '../TotalUsers/TotalUsers';
 
 let socket = ""
-//Change all io.emite to io.sockets.emite -> its a bit more discriptive
-//Add is loading to client side  webdv
 
 export default function ChatPage({ location }) {
     const CONNECTION = 'localhost:5000';
@@ -18,6 +15,8 @@ export default function ChatPage({ location }) {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [users, setUsers] = useState('');
+
 
     useEffect(() => {
         const {name, room } = queryString.parse(location.search);

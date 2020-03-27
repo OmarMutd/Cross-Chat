@@ -1,13 +1,28 @@
-import React from 'react';
-import './TotalUsers.css';
-// Should return total amount of users in the chat,
+// import React from 'react';
+// import './TotalUsers.css';
 
-function TotalUsers({ users }) {
-    return (
-        <div>
-         
-        </div>
-    )
-}
+// const TotalUsers = ({ users }) => (
+//   <div className="textContainer">
 
-export default TotalUsers;
+//     {
+//       users
+//         ? (
+//           <div>
+//             <h1>People currently chatting:</h1>
+//             <div className="activeContainer">
+//               <h3>
+//                 {users.map(({name}) => (
+//                   <div key={name} className="activeItem">
+//                     {name}
+//                   </div>
+//                 ))}
+//               </h3>
+//             </div>
+//           </div>
+//         )
+//         : null
+//     }
+//   </div>
+// );
+
+// export default TotalUsers;
