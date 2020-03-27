@@ -8,3 +8,9 @@ Add is loading to client side  webdv
 
 Add total users counter
 
+
+
+TO DO
+-------
+User has the ability to delete their account or change their name or password. 
+
