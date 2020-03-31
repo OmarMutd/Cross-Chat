@@ -1,7 +1,7 @@
 import React from 'react'
 import './Input.css';
 
-//enter vs return
+
 
 function Input({ message, sendMessage, setMessage }) {
     return (
@@ -17,4 +17,4 @@ function Input({ message, sendMessage, setMessage }) {
     ) 
 }
 
-export default Input
+export default Input;

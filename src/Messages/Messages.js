@@ -5,7 +5,7 @@ import Message from '../Message/Message.js'
 
 function Messages({ name, messages }) {
     return (
-        <ScrollToBottom>
+        <ScrollToBottom className="messages">
         {messages.map((message, index) =>
          <div key={index}>
             <Message name={name} message={message}/>

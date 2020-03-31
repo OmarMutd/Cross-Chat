@@ -1,3 +1,7 @@
+.sign-out {
+text-align: right;
+}
+
 .infoBar {
     display: flex;
     align-items: center;
