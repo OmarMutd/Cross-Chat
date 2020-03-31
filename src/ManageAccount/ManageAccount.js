@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// Add date account was created? C [R] UD
+import './ManageAccount.css'
 function ManageAccount() {
     return (
-        <div>
-           <button> 
+        <div className='Manage-form'>
+            <div className='Manage-inside-form'>
+            <form >
+           <button className='manage-button'> 
                <Link to="/DeleteAccount">
                 Delete Account
                 </Link> 
                </button>
 
-               <button> 
+               <button className='manage-button'> 
                <Link to="/ChangePassword">
                 Change Password
                 </Link> 
                </button>
+               </form>
+               </div>
         </div>
     )
 }
