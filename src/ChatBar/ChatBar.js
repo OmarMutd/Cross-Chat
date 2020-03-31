@@ -1,5 +1,6 @@
 import React from 'react'
 import './ChatBar.css'
+import { Link } from 'react-router-dom';
 
 
 function ChatBar( { room, name }) {
@@ -8,7 +9,7 @@ function ChatBar( { room, name }) {
         <div className="infoBar">
         <div className="leftInnerContainer">
         <h2 className='roomname'>{room}</h2>
-        <div className='sign-out'><button>X</button></div>
+        <div className='sign-out'><button><Link to="/">X</Link></button></div>
         {/* <h4>Chatting as: {name}</h4> */}
         </div>
         </div>
