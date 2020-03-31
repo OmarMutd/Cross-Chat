@@ -1,4 +1,41 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+.LandingPage-button {
+    color: #fff !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #5CB85C;
+      padding: 20px;
+      border-radius: 5px;
+      display: inline-block;
+      border: none;
+      width: 100%;
+      /* border-color: red; */
+}
+
+.LandingContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #1A1A1D;
+}
 .landing-page {
+    width: 20%;
+}
+.intro-to-app {
+    color: white;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+}
+
+/* .landing-page {
     border-radius: 30px; 
     background: gray;
     padding: 20px;
@@ -17,4 +54,5 @@
 .landing {
     text-decoration: underline;
     cursor: pointer;
-}
+} */
+

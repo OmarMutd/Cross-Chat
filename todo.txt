@@ -12,5 +12,9 @@ Add total users counter
 
 TO DO
 -------
-User has the ability to delete their account or change their name or password. 
+Tuesday: CSS
+Wednesday: Front + backend connectivity
+Thursday: Form validation + dark mode
+Friday: Deploy + slides
+Saturday: Prepare presentation, add other stuff...
 

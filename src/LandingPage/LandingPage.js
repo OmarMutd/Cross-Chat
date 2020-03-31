@@ -7,25 +7,23 @@ import { Link } from "react-router-dom";
 export class LandingPage extends Component {
     render() {
         return (
-            <div>
-
-
+    <div className='LandingContainer'>
       <div className='landing-page'>
-       <p > Welcome to "Chat-App"... This is a cool little full-stack app built with react, node/express & postgreSQL. This app allows you to chat with other users in realtime!</p>
+       <h2 className='intro-to-app'> Welcome to "Chat-App"... This is a cool little full-stack app built with react, node/express & postgreSQL. This app allows you to chat with other users in realtime!</h2>
 
-    <button className='go-to-sign-in'>
+    <button className='LandingPage-button'>
     <Link to="/SignInPage">Log In</Link>
     </button>
 
-    <button className='create-account'>
+    <button className='LandingPage-button'>
     <Link to="/CreateAnAccount">Create An Account</Link>
     </button>
 
-            <button className='manage-account'>
-            <Link to='/ManageAccount'>Manage Account</Link>
-            </button>
+    <button className='LandingPage-button'>
+    <Link to='/ManageAccount'>Manage Account</Link>
+    </button>
+    </div>
 
-      </div>
       </div>
 
         )
