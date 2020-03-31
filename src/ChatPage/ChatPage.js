@@ -59,8 +59,8 @@ export default function ChatPage({ location }) {
 
     console.log(message, messages);
     return (
-        <div>
-            <div>
+        <div className='outerContainer'>
+            <div className='container'>
                 <ChatBar room={room}/>
                 <Messages messages={messages} name={name}/>
                 <Input message={message} sendMessage={sendMessage} setMessage={setMessage} />

@@ -5,14 +5,14 @@ import './Input.css';
 
 function Input({ message, sendMessage, setMessage }) {
     return (
-       <form>
-           <input 
+       <form className="form">
+           <input className='input'
            value={message} 
            onChange={(event) => setMessage(event.target.value)}
            onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
            />
            
-        <button onClick={(event) => sendMessage(event)}> Chat </button>
+        <button onClick={(event) => sendMessage(event)} className='sendButton'> Chat </button>
        </form>
     ) 
 }
