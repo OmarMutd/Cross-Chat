@@ -5,20 +5,24 @@ html, body {
   }
 
 .LandingPage-button {
-    color: #fff !important;
+      
       text-transform: uppercase;
       text-decoration: none;
       background: #5CB85C;
-      padding: 20px;
-      border-radius: 5px;
-      display: inline-block;
-      border: none;
-      width: 100%;
-      /* border-color: red; */
+      padding: 15px 20px;
       border-radius: 0;
-    padding: 15px 20px;
-    width: 100%;
+      display: inline-block;
+      width: 100%;
+      border-color: white;
+      padding: 15px 20px;
+      width: 100%;
+      
 }
+
+.LandingPage-button:hover{
+    background-color:#4095c6;
+    
+    }
 
 .LandingContainer {
     display: flex;
@@ -35,27 +39,11 @@ html, body {
     color: white;
     font-size: 1.5em;
     padding-bottom: 10px;
-    border-bottom: 2px solid white;
+    border-bottom: 3px solid white;
 }
 
-/* .landing-page {
-    border-radius: 30px; 
-    background: gray;
-    padding: 20px;
-    width: 250px;
-    height: 150px;
-    margin: auto;
-    width: 50%;
-    position: relative;
-    top: 250px;
+.lp-text {
+    text-decoration: none;
+    color: #fff
 }
-
-.go-to-sign-in {
-    cursor: pointer;
-}
-
-.landing {
-    text-decoration: underline;
-    cursor: pointer;
-} */
 

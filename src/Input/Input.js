@@ -7,7 +7,7 @@ function Input({ message, sendMessage, setMessage, room }) {
     return (
        <form className="form">
            <input className='input'
-           placeholder={`Chatting in ${room}`}
+           placeholder={`Send a message in ${room}`}
            value={message} 
            onChange={(event) => setMessage(event.target.value)}
            onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
