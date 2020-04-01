@@ -63,7 +63,7 @@ export default function ChatPage({ location }) {
             <div className='container'>
                 <ChatBar room={room} name={name}/>
                 <Messages messages={messages} name={name}/>
-                <Input message={message} sendMessage={sendMessage} setMessage={setMessage} />
+                <Input message={message} sendMessage={sendMessage} setMessage={setMessage} room={room}/>
                 {/* <TotalUsers users={users}/> */}
             </div>
         </div>
