@@ -96,6 +96,13 @@ html, body {
 
   .button:hover{
     background-color:#4095c6;
+    color: black;
+
+    /* cursor: text;
+    cursor: row-resize;
+    cursor: move; */
+
+    cursor: pointer;
     
     }
   

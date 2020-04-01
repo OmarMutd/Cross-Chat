@@ -16,12 +16,19 @@ html, body {
       border-color: white;
       padding: 15px 20px;
       width: 100%;
+      color: #fff
       
 }
 
 .LandingPage-button:hover{
     background-color:#4095c6;
-    
+    color: black;
+
+    /* cursor: text;
+    cursor: row-resize;
+    cursor: move; */
+
+    cursor: pointer;
     }
 
 .LandingContainer {
@@ -42,8 +49,8 @@ html, body {
     border-bottom: 3px solid white;
 }
 
-.lp-text {
+/* .lp-text {
     text-decoration: none;
     color: #fff
-}
+} */
 
