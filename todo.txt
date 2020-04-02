@@ -18,3 +18,9 @@ Thursday: Form validation + dark mode
 Friday: Deploy + slides
 Saturday: Prepare presentation, add other stuff...
 
+// ADD CRUD -> Profiles, admin can delete user
+// Name must be 3 or more charecters otherwise return an error
+// Passwords must match otherwise return an error
+// Password <6 = error, password >20 = error
+// (!password.match(/[0-9]/)) -> or return an error
+

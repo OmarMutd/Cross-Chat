@@ -16,7 +16,7 @@ export default function ChatPage({ location }) {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-    const [users, setUsers] = useState('');
+    // const [users, setUsers] = useState('');
 
 
     useEffect(() => {

@@ -1,18 +1,55 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './CreateAnAccount.css'
+import config from '../config'
+import axios from 'axios'
+
 
 export default function CreateAnAccount() {
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-    const [matchpassword, setMatchpassword] = useState('');
-    const [errors, SetErrors] = useState([]);
+    const [name, setName] = useState([]);
+    const [password, setPassword] = useState([]);
+    const [matchpassword, setMatchpassword] = useState([]);
+    // const [errors, SetErrors] = useState([]);
 
-// ADD CRUD -> Profiles, admin can delete user
-// Name must be 3 or more charecters otherwise return an error
-// Passwords must match otherwise return an error
-// Password <6 = error, password >20 = error
-// (!password.match(/[0-9]/)) -> or return an error
+        // useEffect(()=> {
+        //     axios
+        //   .get(`${config.API_ENDPOINT}/names`)
+        //   .then(res => {
+        //       console.log(res)
+        //       setName(res.data)
+        //   })
+        //   .catch(err => {
+        //       console.log(err)
+        //   })
+        // },[])
+
+
+     useEffect(()=> {
+         Promise.all([
+             fetch(`${config.API_ENDPOINT}/names`, {
+                 method: 'GET',
+                 headers: {
+                    'content-type': 'application/json',
+                    'Authorization': `Bearer ${config.API_TOKEN}`,
+                    'Access-Control-Allow-Origin': 'no-cors'
+                 }
+             })
+         ])
+         .then(([res]) => {
+             if(!res.ok)
+             return res.json().then(e => Promise.reject(e));
+
+             return Promise.all([res.json()]);
+            })
+            .then(([name]) => {
+                setName({name})
+            })
+            .catch(error => {
+                console.error({error});
+            })
+         
+     })
+
 
     return (
         <div>

@@ -1,10 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './DeleteAccount.css'
+import config from '../config'
+
 
 
 function DeleteAccount() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+
+    useEffect(()=> {
+        fetch(`${config.API_ENDPOINT}/names/${name}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authoirization': `Bearer ${config.API_ENDPOINT}`
+            }
+        })
+    })
 
     return (
         <div>
