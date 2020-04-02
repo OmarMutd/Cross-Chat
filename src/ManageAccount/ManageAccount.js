@@ -3,21 +3,31 @@ import { Link } from 'react-router-dom';
 import './ManageAccount.css'
 function ManageAccount() {
     return (
-        <div className='Manage-form'>
-            <div className='Manage-inside-form'>
+        <div className='joinOuterContainer'>
+            <div className='joinInnerContainer'>
             <form >
-           <button className='manage-button'> 
-               <Link to="/DeleteAccount">
-                Delete Account
-                </Link> 
-               </button>
+                <h3 className='header'> Manage Account</h3>
 
-               <button className='manage-button'> 
-               <Link to="/ChangePassword">
+          <Link to="/DeleteAccount"> <button className='manage-button'> 
+               
+                Delete Account
+                
+               </button></Link> 
+
+               <Link to="/ChangePassword"><button className='manage-button'> 
+               
                 Change Password
-                </Link> 
-               </button>
+                
+               </button></Link> 
+
+                <Link to="/"><button className='manage-button'> 
+              
+                Go Back
+               
+               </button> </Link> 
+
                </form>
+
                </div>
         </div>
     )

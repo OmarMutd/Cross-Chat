@@ -60,17 +60,18 @@ export default function CreateAnAccount(props) {
 
 
     return (
-        <div>
+        <div className="joinOuterContainer">
             {/* onSubmit={handleSubmit(onSubmit)} */}
+            <div className="joinInnerContainer">
             <form >   
             
-                <h2> Create An Account</h2>
+                <h2 className='header'> Create An Account</h2>
 
                 <div>
                     <input
                     // ref={register}
                     placeholder="User" 
-                    className="user-box" 
+                    className="joinInput" 
                     type="text" 
                     onChange={(event) => setName(event.target.value)} 
                     ></input>
@@ -80,7 +81,7 @@ export default function CreateAnAccount(props) {
                     <input
                     // ref={register}
                     placeholder="Password" 
-                    className="password-box" 
+                    className="joinInput" 
                     type="password" 
                     onChange={(event) => setPassword(event.target.value)} >
                     </input> 
@@ -90,7 +91,7 @@ export default function CreateAnAccount(props) {
                     <input
                     // ref={register}
                     placeholder="Match Password" 
-                    className="password-repeat" 
+                    className="joinInput" 
                     type="password" 
                     onChange={(event) => setMatchpassword(event.target.value)} >
                     </input>
@@ -99,13 +100,20 @@ export default function CreateAnAccount(props) {
 
 
                 <Link onClick={event => (!name || !password) ? event.preventDefault() : null} to='/SignInPage'>
-                <button disabled={!name || !password || password !== matchpassword}>
+                <button className='return-button' disabled={!name || !password || password !== matchpassword}>
                  Create Account
+                </button>
+                </Link>
+
+                <Link to='/'>
+                <button className='return-button'>
+                 Go Back to Landing Page
                 </button>
                 </Link>
 
             
             </form>
+            </div>
         </div>
     )}
 
