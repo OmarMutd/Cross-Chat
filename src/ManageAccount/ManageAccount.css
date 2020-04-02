@@ -34,14 +34,13 @@ background-color:#4eb5f1;
 text-align:center;
 transition: all 0.2s;
 color: #fff !important;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 20px;
-      border-radius: 5px;
-      display: inline-block;
-      border: none;
-      width: 100%;
-
+text-transform: uppercase;
+text-decoration: none;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+width: 100%;
 }
 
 .manage-button:hover{

@@ -22,6 +22,8 @@ export default function SignInPage() {
                  Sign In
                 </button>
                 </Link>
+                <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
+
 
             </form>
         </div>

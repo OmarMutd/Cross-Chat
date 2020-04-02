@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './ChangePassword.css'
+import { Link } from 'react-router-dom';
+
 
 function ChangePassword() {
     const [name, setName] = useState('');
@@ -7,19 +9,24 @@ function ChangePassword() {
     const [newpassword, setNewPassword] = useState('');
 
     return (
-        <div>
+        <div className='joinOuterContainer'>
+            <div className='joinInnerContainer'>
             <form>
 
-            <div><input placeholder="User" className="user-box" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
-            <div><input placeholder="Password" className="password-box" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
-            <div><input placeholder="New Password" className="new-password-box" type="password" onChange={(event) => setNewPassword(event.target.value)} ></input> </div>
+            <div><input placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
+            <div><input placeholder="Password" className="joinInput" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
+            <div><input placeholder="New Password" className="joinInput" type="password" onChange={(event) => setNewPassword(event.target.value)} ></input> </div>
 
-            <button disabled={!name || !password || !newpassword}>
+            <button className='delete-account-button' disabled={!name || !password || !newpassword}>
             Confirm Change password
             </button>
+            <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
+
 
             </form>
+            </div>
         </div>
+       
     )
 }
 

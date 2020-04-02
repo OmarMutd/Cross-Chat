@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './DeleteAccount.css'
 import config from '../config'
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,11 +20,18 @@ function DeleteAccount() {
     })
 
     return (
-        <div>
-            <div><input placeholder="User" className="user-box" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
-            <div><input placeholder="Password" className="password-box" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
+        <div className='joinOuterContainer'>
+            <div className='joinInnerContainer'>
+                <form>
+                <h4 className='header'>Delete Account</h4>
+            <div><input placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
+            <div><input placeholder="Password" className="joinInput" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
 
-            <button disabled={!name || !password}> Confirm Delete Account </button>
+            <button className='delete-account-button' disabled={!name || !password}> Confirm Delete Account </button>
+            <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
+
+            </form>
+       </div>
         </div>
     )
 }
