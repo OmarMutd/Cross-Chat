@@ -2,13 +2,19 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './CreateAnAccount.css'
 import config from '../config'
+import { useForm } from "react-hook-form";
 import axios from 'axios'
 
 
-export default function CreateAnAccount() {
+export default function CreateAnAccount(props) {
+    // const { register, handleSubmit } = useForm()
     const [name, setName] = useState([]);
     const [password, setPassword] = useState([]);
     const [matchpassword, setMatchpassword] = useState([]);
+    // const onSubmit = (data, e) => {
+    //     console.log('Submit event', e)
+    //     alert(JSON.stringify(data))}
+
     // const [errors, SetErrors] = useState([]);
 
         // useEffect(()=> {
@@ -24,41 +30,45 @@ export default function CreateAnAccount() {
         // },[])
 
 
-     useEffect(()=> {
-         Promise.all([
-             fetch(`${config.API_ENDPOINT}/names`, {
-                 method: 'GET',
-                 headers: {
-                    'content-type': 'application/json',
-                    'Authorization': `Bearer ${config.API_TOKEN}`,
-                    'Access-Control-Allow-Origin': 'no-cors'
-                 }
-             })
-         ])
-         .then(([res]) => {
-             if(!res.ok)
-             return res.json().then(e => Promise.reject(e));
+        // handleSubmit = (onSubmit) => {
+        //     onSubmit.preventDefault()
+        //     const name = onSubmit.target[0].value
+        //     const bodyName = JSON.stringify({name})
+        //     fetch(`${config.API_ENDPOINT}/names`, {
+        //       method: 'POST',
+        //       headers: {
+        //         'content-type': 'application/json',
+        //         'Authorization': `Bearer ${config.API_TOKEN}`,
+        //         'Access-Control-Allow-Origin': 'no-cors'
 
-             return Promise.all([res.json()]);
-            })
-            .then(([name]) => {
-                setName({name})
-            })
-            .catch(error => {
-                console.error({error});
-            })
-         
-     })
+        //       },
+        //       body: bodyName,
+        //     })
+        //     .then(res => {
+        //       if (!res.ok)
+        //         return res.json().then(e => Promise.reject(e))
+        //         return res.json()
+        //     })
+        //     .then((data) => {
+        //     //   this.context.addFolder(data)
+        //       props.history.push(`/names/${data.id}`)
+        //     })
+        //     .catch(error => {
+        //       console.error({error})
+        //     })
+        //   }
 
 
     return (
         <div>
-            <form>
+            {/* onSubmit={handleSubmit(onSubmit)} */}
+            <form >   
             
                 <h2> Create An Account</h2>
 
                 <div>
-                    <input 
+                    <input
+                    // ref={register}
                     placeholder="User" 
                     className="user-box" 
                     type="text" 
@@ -67,7 +77,8 @@ export default function CreateAnAccount() {
                 </div>
 
                 <div>
-                    <input 
+                    <input
+                    // ref={register}
                     placeholder="Password" 
                     className="password-box" 
                     type="password" 
@@ -76,7 +87,8 @@ export default function CreateAnAccount() {
                     </div>
 
                 <div>
-                    <input 
+                    <input
+                    // ref={register}
                     placeholder="Match Password" 
                     className="password-repeat" 
                     type="password" 

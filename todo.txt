@@ -24,3 +24,5 @@ Saturday: Prepare presentation, add other stuff...
 // Password <6 = error, password >20 = error
 // (!password.match(/[0-9]/)) -> or return an error
 
+'Access-Control-Allow-Origin': 'no-cors'
+
