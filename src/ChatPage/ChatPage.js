@@ -5,12 +5,13 @@ import  './ChatPage.css';
 import Messages from '../Messages/Messages';
 import ChatBar from '../ChatBar/ChatBar';
 import Input from '../Input/Input';
+import config from '../config'
 // import TotalUsers from '../TotalUsers/TotalUsers';
 
 let socket = ""
 
 export default function ChatPage({ location }) {
-    const CONNECTION = 'localhost:5000';
+    // const CONNECTION = 'localhost:5000';
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
@@ -21,7 +22,7 @@ export default function ChatPage({ location }) {
     useEffect(() => {
         const {name, room } = queryString.parse(location.search);
 
-        socket = io(CONNECTION);
+        socket = io(config.API_ENDPOINT);
 
         setName(name);
         setRoom(room);
@@ -40,7 +41,7 @@ export default function ChatPage({ location }) {
         // console.log(socket);
         // console.log(data)
         // console.log(location.search)
-    }, [CONNECTION, location.search]);
+    }, [config.API_ENDPOINT, location.search]);
 
      useEffect(() =>  {
          socket.on('message', (message) => {
