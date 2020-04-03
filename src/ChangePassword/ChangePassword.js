@@ -1,29 +1,52 @@
 import React, { useState } from 'react';
 import './ChangePassword.css'
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import config from '../config'
+
 
 
 function ChangePassword() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [newpassword, setNewPassword] = useState('');
+    const {register, handleSubmit} = useForm();
+
+    const onSubmit = () => {
+        fetch(`${config.API_ENDPOINT}/names/${name}`, {
+        method: 'PATCH',
+        headers: {
+        'content-type': 'application/json',
+        'Authoirization': `Bearer ${config.API_ENDPOINT}`,
+        'Access-Control-Allow-Origin': 'no-cors'
+        }
+        })
+        .then(res => {
+            if (!res.ok)
+              return res.json().then(e => Promise.reject(e))
+              return res.json()
+            })
+        .catch(error => {
+              console.error({error})
+            })
+          }
+    
 
     return (
         <div className='joinOuterContainer'>
             <div className='joinInnerContainer'>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
 
-            <div><input placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
-            <div><input placeholder="Password" className="joinInput" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
-            <div><input placeholder="New Password" className="joinInput" type="password" onChange={(event) => setNewPassword(event.target.value)} ></input> </div>
+            <div><input ref={register} name='user-name' placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input></div>
+            <div><input ref={register} name='old-password' placeholder="Password" className="joinInput" type="password" onChange={(event) => setPassword(event.target.value)} ></input> </div>
+            <div><input ref={register} name='new-password' placeholder="New Password" className="joinInput" type="password" onChange={(event) => setNewPassword(event.target.value)} ></input> </div>
 
-            <button className='delete-account-button' disabled={!name || !password || !newpassword}>
+            <button type='submit' className='delete-account-button' disabled={!name || !password || !newpassword}>
             Confirm Change password
             </button>
             <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
-
-
             </form>
+            <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
             </div>
         </div>
        

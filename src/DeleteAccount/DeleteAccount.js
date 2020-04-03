@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './DeleteAccount.css'
 import config from '../config'
 import { Link } from 'react-router-dom';
@@ -10,20 +10,29 @@ function DeleteAccount() {
     const [password, setPassword] = useState('');
     const {register, handleSubmit} = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
-    }
+    // const onSubmit = (data) => {
+    //     console.log(data);
+    // }
 
-    // useEffect(()=> {
-    //     fetch(`${config.API_ENDPOINT}/names/${name}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //             'content-type': 'application/json',
-    //             'Authoirization': `Bearer ${config.API_ENDPOINT}`,
-    //             'Access-Control-Allow-Origin': 'no-cors'
-    //         }
-    //     })
-    // },)
+    const onSubmit= () => {
+        fetch(`${config.API_ENDPOINT}/names/${name}`, {
+        method: 'DELETE',
+        headers: {
+        'content-type': 'application/json',
+        'Authoirization': `Bearer ${config.API_ENDPOINT}`,
+        'Access-Control-Allow-Origin': 'no-cors'
+        }
+        })
+        .then(res => {
+            if (!res.ok)
+              return res.json().then(e => Promise.reject(e))
+              return res.json()
+            })
+        .catch(error => {
+              console.error({error})
+            })
+          }
+
 
     return (
         <div className='joinOuterContainer'>
@@ -39,13 +48,7 @@ function DeleteAccount() {
             <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
        </div>
         </div>
-    // <form onSubmit={handleSubmit(onSubmit)}>
-    //     <input type='text' placeholder='Email' name='email' ref={register} ></input>
-    //     <input type='password' placeholder='Password' name='password' ref={register} ></input>
 
-    //     <input type='submit'></input>
-
-    // </form>
     );
 }
 
