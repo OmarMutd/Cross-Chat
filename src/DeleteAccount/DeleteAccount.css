@@ -22,3 +22,15 @@
     border: none;
     width: 100%;
     }
+
+    .delete-account-button:hover{
+        background-color:#4095c6;
+        color: black;
+    
+        /* cursor: text;
+        cursor: row-resize;
+        cursor: move; */
+    
+        cursor: pointer;
+        
+        }

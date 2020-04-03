@@ -27,4 +27,5 @@ Saturday: Prepare presentation, add other stuff...
 'Access-Control-Allow-Origin': 'no-cors'
 
 -connectivity, auth, deploy, slides
+- refactor for mobile.
 

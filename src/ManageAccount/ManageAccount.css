@@ -45,6 +45,7 @@ width: 100%;
 
 .manage-button:hover{
 background-color:#4095c6;
+cursor: pointer;
 
 }
 
