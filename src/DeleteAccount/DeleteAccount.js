@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 
-function DeleteAccount() {
+function DeleteAccount(props) {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const {register, handleSubmit, errors} = useForm();
@@ -15,17 +15,18 @@ function DeleteAccount() {
     // }
 
     const onSubmit = () => {
-        fetch(`${config.API_ENDPOINT}/api/names/${name}`, {
+        const bodyName = JSON.stringify({name, password})
+        fetch(`${config.API_ENDPOINT}/api/names/`, {
         method: 'DELETE',
         headers: {
         'Content-Type': 'application/json'
         },
+       body: bodyName,
 
         })
         .then((res) => {
             if (!res.ok)
               return res.json().then((e) => Promise.reject(e));
-              return res.json();
             })
         .catch((error) => {
               console.error({ error });

@@ -29,3 +29,14 @@ Saturday: Prepare presentation, add other stuff...
 -connectivity, auth, deploy, slides
 - refactor for mobile.
 
+
+- Rewatch video and take notes
+- connectivity
+- favicon
+- fix databases...
+- slides
+- HTTP requests...
+- DEPLOY
+
+TO DO: PATCH, HOOK FETCH, DATABASES TO SHOW UP, FIX FAVICON 
+
