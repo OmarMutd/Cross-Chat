@@ -27,9 +27,11 @@ function DeleteAccount(props) {
         .then((res) => {
             if (!res.ok)
               return res.json().then((e) => Promise.reject(e));
+              // add a message when delete works
             })
         .catch((error) => {
               console.error({ error });
+
             });
           };
 

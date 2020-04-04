@@ -13,18 +13,17 @@ function ChangePassword() {
     const {register, handleSubmit} = useForm();
 
     const onSubmit = () => {
+        const bodyName = JSON.stringify({name, password})
         fetch(`${config.API_ENDPOINT}/names/${name}`, {
         method: 'PATCH',
         headers: {
         'content-type': 'application/json',
-        'Authoirization': `Bearer ${config.API_ENDPOINT}`,
-        'Access-Control-Allow-Origin': 'no-cors'
-        }
+        },
+        body: bodyName,
         })
         .then(res => {
             if (!res.ok)
               return res.json().then(e => Promise.reject(e))
-              return res.json()
             })
         .catch(error => {
               console.error({error})

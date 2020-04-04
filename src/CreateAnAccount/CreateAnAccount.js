@@ -14,11 +14,14 @@ export default function CreateAnAccount(props) {
 
 
     const onSubmit = () => {
+        const bodyName = JSON.stringify({name, password})
+
         fetch(`${config.API_ENDPOINT}/api/names`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
         },
+        body: bodyName,
 
         })
         .then((res) => {
