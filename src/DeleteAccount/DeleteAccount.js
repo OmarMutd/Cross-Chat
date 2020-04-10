@@ -10,11 +10,9 @@ function DeleteAccount(props) {
     const [password, setPassword] = useState('');
     const {register, handleSubmit, errors} = useForm();
 
-    // const onSubmit = (data) => {
-    //     console.log(data);
-    // }
 
     const onSubmit = () => {
+        
         const bodyName = JSON.stringify({name, password})
         fetch(`${config.API_ENDPOINT}/api/names/`, {
         method: 'DELETE',
@@ -27,7 +25,9 @@ function DeleteAccount(props) {
         .then((res) => {
             if (!res.ok)
               return res.json().then((e) => Promise.reject(e));
+              console.log(res.message)
               // add a message when delete works
+              // add a message when the delete fails -> 'username & password do not match'
             })
         .catch((error) => {
               console.error({ error });
@@ -52,19 +52,16 @@ function DeleteAccount(props) {
              ></input>
 
             <input 
-            ref={register({required: 'Password Required.', minLength: {value: 8, message: 'Password must be 8 or more characters',
-            },
-            })} 
+            ref={register({required: true})} 
             name='pass' 
             placeholder="Password" 
             className="joinInput" 
             type="password" 
             onChange={(event) => setPassword(event.target.value)} ></input>
-            {errors.password && <p className='password-error'>{errors.password.message}</p>}
+            {errors.password && <p> Password is invalid.</p>}
 
             <button type='submit' className='delete-account-button'> 
-            {' '}
-            Confirm Delete Account{' '}
+            Confirm Delete Account
             </button>
             </form>
             <Link to='/ManageAccount'>

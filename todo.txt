@@ -9,5 +9,6 @@
 - Add total users
 - Add dark mode
 - Add loading screen
-- Deploy 
+- Deploy
+- Protected routes by tokens
 
