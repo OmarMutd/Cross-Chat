@@ -9,7 +9,7 @@ export class LandingPage extends Component {
         return (
     <div className='LandingContainer'>
       <div className='landing-page'>
-       <h2 className='intro-to-app'> Welcome to "Chat-App"... This is a cool little full-stack app built with react, node/express & postgreSQL. This app allows you to chat with other users in realtime!</h2>
+       <h2 className='intro-to-app'> Realtime Chat application built with React, node/express, postgres and socket.io.</h2>
        
     <Link to="/SignInPage" className='lp-text'>
     <button className='LandingPage-button'>

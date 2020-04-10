@@ -1,42 +1,13 @@
-Add Dark Mode -> Should Dark mode setting save for the user? 
-
-Form Validation with hooks
-
-Change all io.emite to io.sockets.emite -> its a bit more discriptive
-
-Add is loading to client side  webdv
-
-Add total users counter
-
-
-
-TO DO
--------
-Tuesday: CSS
-Wednesday: Front + backend connectivity
-Thursday: Form validation + dark mode
-Friday: Deploy + slides
-Saturday: Prepare presentation, add other stuff...
-
-// ADD CRUD -> Profiles, admin can delete user
-// Name must be 3 or more charecters otherwise return an error
-// Passwords must match otherwise return an error
-// Password <6 = error, password >20 = error
-// (!password.match(/[0-9]/)) -> or return an error
-
-'Access-Control-Allow-Origin': 'no-cors'
-
--connectivity, auth, deploy, slides
-- refactor for mobile.
-
-
-- Rewatch video and take notes
-- connectivity
-- favicon
-- fix databases...
-- slides
-- HTTP requests...
-- DEPLOY
-
-TO DO: PATCH, HOOK FETCH, DATABASES TO SHOW UP, FIX FAVICON 
+- Render Error Messages
+- Fully Connect front end to back end
+- Read Me
+- Add Demo Account
+- Add authentication
+- Do not allow users to Delete Demo Account
+- Add favicon
+- Refactor for mobile
+- Add total users
+- Add dark mode
+- Add loading screen
+- Deploy 
 
