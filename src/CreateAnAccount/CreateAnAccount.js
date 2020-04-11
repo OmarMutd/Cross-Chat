@@ -9,7 +9,7 @@ export default function CreateAnAccount(props) {
     const { register, handleSubmit, errors } = useForm();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const [matchpassword, setMatchpassword] = useState('');
+    // const [matchpassword, setMatchpassword] = useState('');
  
 
 

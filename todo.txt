@@ -14,3 +14,4 @@ Extra features:
 - Add total users
 - Add dark mode [custom react hooks]
 - Add loading screen
+- Add requirement to match password when creating an account
