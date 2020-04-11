@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './LandingPage.css'
 import { Link } from "react-router-dom";
-// Fragments
 
 
 export class LandingPage extends Component {
@@ -10,6 +9,13 @@ export class LandingPage extends Component {
     <div className='LandingContainer'>
       <div className='landing-page'>
        <h2 className='intro-to-app'> Realtime Chat application built with React, node/express, postgres and socket.io.</h2>
+
+    <div className='demo-user'>
+      <p> Demo account:</p>
+      <p> Username: demo</p>
+      <p> Password: #Aa12345 </p>
+    </div>
+    < br />
        
     <Link to="/SignInPage" className='lp-text'>
     <button className='LandingPage-button'>
@@ -29,6 +35,8 @@ export class LandingPage extends Component {
     </button>
     </Link>
     </div>
+    
+   
 
       </div>
 

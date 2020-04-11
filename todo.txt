@@ -1,17 +1,19 @@
 Must do: 
-- Render Error Messages
 - Fully Connect front end to back end
 - Add Demo Account
-- Add authentication
 - Do not allow users to Delete Demo Account
-- Refactor for mobile
 - Deploy
-- Protected routes by tokens
+- Protected routes by tokens / Auth
 - Testing 
 
 
-Extra features:
+Do if have time:
+- Refactor for mobile
+- Display conditional erro messages [when a regex criteria isn't met]
 - Add total users
 - Add dark mode [custom react hooks]
 - Add loading screen
 - Add requirement to match password when creating an account
+- Add feature where demo account can not be deleted
+- Rickroll when someone tries to delete demo account
+- Boxes for componenets in README, pictures, and live link

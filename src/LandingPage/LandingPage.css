@@ -23,11 +23,6 @@ html, body {
 .LandingPage-button:hover{
     background-color:#4095c6;
     color: black;
-
-    /* cursor: text;
-    cursor: row-resize;
-    cursor: move; */
-
     cursor: pointer;
     }
 
@@ -49,8 +44,11 @@ html, body {
     border-bottom: 3px solid white;
 }
 
-/* .lp-text {
-    text-decoration: none;
-    color: #fff
-} */
+.demo-user {
+    color: white;
+    border-bottom: 3px solid white;
+    font-family: "Times New Roman", Times, serif;
+    padding-bottom: 10px;
+
+}
 
