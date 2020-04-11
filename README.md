@@ -1,4 +1,4 @@
-# Cross Chat server
+# Cross Chat Client
 
 This is the backend for Cross Chat. It allows you to communicate with other users in realtime.
 
