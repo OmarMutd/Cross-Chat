@@ -1,14 +1,16 @@
+Must do: 
 - Render Error Messages
 - Fully Connect front end to back end
-- Read Me
 - Add Demo Account
 - Add authentication
 - Do not allow users to Delete Demo Account
-- Add favicon
 - Refactor for mobile
-- Add total users
-- Add dark mode
-- Add loading screen
 - Deploy
 - Protected routes by tokens
+- Testing 
 
+
+Extra features:
+- Add total users
+- Add dark mode [custom react hooks]
+- Add loading screen
