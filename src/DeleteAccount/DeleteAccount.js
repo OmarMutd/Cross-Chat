@@ -50,15 +50,17 @@ function DeleteAccount(props) {
              type="text" 
              onChange={(event) => setName(event.target.value)} 
              ></input>
+            {errors.user && <p className='create-err'>Username is required.</p>}
+
 
             <input 
             ref={register({required: true})} 
-            name='pass' 
+            name='password' 
             placeholder="Password" 
             className="joinInput" 
             type="password" 
             onChange={(event) => setPassword(event.target.value)} ></input>
-            {errors.password && <p> Password is invalid.</p>}
+            {errors.password && <p className='create-err'> Password is required.</p>}
 
             <button type='submit' className='delete-account-button'> 
             Confirm Delete Account
