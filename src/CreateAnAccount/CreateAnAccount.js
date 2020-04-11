@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 
 
 export default function CreateAnAccount(props) {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [matchpassword, setMatchpassword] = useState('');
@@ -45,27 +45,30 @@ export default function CreateAnAccount(props) {
 
                 <div>
                     <input
-                    ref={register}
-                    name='new-user'
+                    ref={register({required: true})}
+                    name='user'
                     placeholder='User' 
                     className='joinInput' 
                     type='text' 
                     onChange={(event) => setName(event.target.value)} 
                     ></input>
                 </div>
+                {errors.user && <p className='create-err'>Username is required.</p>}
+
 
                 <div>
                     <input
-                    name='new-password'
-                    ref={register}
+                    name='password'
+                    ref={register({required: true, minLength: 8})}
                     placeholder='Password' 
                     className='joinInput' 
                     type='password' 
                     onChange={(event) => setPassword(event.target.value)} 
                     ></input> 
                     </div>
+                    {errors.password && <p className='create-err'>Password must be at least 8 charecters, contain one uppercase and one lower case charecter, and contain one special charecter. </p>}
 
-                <div>
+                {/* <div>
                     <input
                     name='match-new-password'
                     ref={register}
@@ -74,7 +77,7 @@ export default function CreateAnAccount(props) {
                     type='password' 
                     onChange={(event) => setMatchpassword(event.target.value)} 
                     ></input>
-                 </div>
+                 </div> */}
 
 
                 {/* //fix this line */}
@@ -83,7 +86,6 @@ export default function CreateAnAccount(props) {
                 (!name || !password) ? event.preventDefault() : null} 
                 to='/SignInPage'> */}
                 <button className='return-button' 
-                disabled={!name || !password || password !== matchpassword}
                 >
                  Create Account
                 </button>
