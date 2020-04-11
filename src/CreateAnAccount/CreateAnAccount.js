@@ -78,16 +78,16 @@ export default function CreateAnAccount(props) {
 
 
                 {/* //fix this line */}
-                <Link 
+                {/* <Link 
                 onClick={(event) => 
                 (!name || !password) ? event.preventDefault() : null} 
-                to='/SignInPage'>
+                to='/SignInPage'> */}
                 <button className='return-button' 
                 disabled={!name || !password || password !== matchpassword}
                 >
                  Create Account
                 </button>
-                </Link>
+                {/* </Link> */}
 
                 <Link to='/'>
                 <button className='return-button'>

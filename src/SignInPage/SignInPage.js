@@ -36,7 +36,7 @@ export default function SignInPage() {
     return (
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
-                <h2 className='header'>Sign in to Chat</h2>
+                <h2 className='signintalk'>Enter username, password, and chatroom to connect with other users!</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <input ref={register} name='username' placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input>
@@ -47,7 +47,7 @@ export default function SignInPage() {
 
                     <Link onClick={event => (!name || !room || !password) ? event.preventDefault() : null} to={`ChatPage?name=${name}&room=${room}`}>
                         <button disabled={!name || !password || !room} className='button'>
-                            Sign In
+                            Chat!
                 </button>
                     </Link>
                 </form>

@@ -13,7 +13,7 @@ export class LandingPage extends Component {
        
     <Link to="/SignInPage" className='lp-text'>
     <button className='LandingPage-button'>
-    Log In
+    Join a Chat Room!
     </button>
     </Link>
 
