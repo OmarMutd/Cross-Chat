@@ -1,7 +1,5 @@
 Must do: 
 - Fully Connect front end to back end
-- Add Demo Account
-- Do not allow users to Delete Demo Account
 - Deploy
 - Protected routes by tokens / Auth
 - Testing 
@@ -9,11 +7,15 @@ Must do:
 
 Do if have time:
 - Refactor for mobile
-- Display conditional erro messages [when a regex criteria isn't met]
+- Alert/Block back button
+- Display conditional error messages [when a regex criteria isn't met]
 - Add total users
 - Add dark mode [custom react hooks]
 - Add loading screen
 - Add requirement to match password when creating an account
 - Add feature where demo account can not be deleted
-- Rickroll when someone tries to delete demo account
+- Rickroll when someone tries to delete demo account [Do not allow users to Delete Demo Account]
 - Boxes for componenets in README, pictures, and live link
+- Add about tab that lets you see recent updates/additions
+- Show password button or show letter until next letter is typed.
+- Added ability to change username

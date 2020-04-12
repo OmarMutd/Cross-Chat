@@ -22,7 +22,7 @@ function ManageAccount() {
 
                 <Link to="/"><button className='manage-button'> 
               
-                Go Back
+                Sign out
                
                </button> </Link> 
 

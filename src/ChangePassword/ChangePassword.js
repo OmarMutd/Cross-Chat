@@ -14,7 +14,7 @@ function ChangePassword() {
 
     const onSubmit = () => {
         const bodyName = JSON.stringify({ name, password })
-        fetch(`${config.API_ENDPOINT}/names/${name}`, {
+        fetch(`${config.API_ENDPOINT}/names/`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -71,9 +71,8 @@ function ChangePassword() {
                         Confirm Change password
             </button>
                     <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
-                </form>
-                <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
-            </div>
+                </form>       
+                     </div>
         </div>
 
     )

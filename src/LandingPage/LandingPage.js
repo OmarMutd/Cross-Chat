@@ -29,11 +29,6 @@ export class LandingPage extends Component {
     </button>
     </Link>
 
-    <Link to='/ManageAccount' className='lp-text'>
-    <button className='LandingPage-button'>
-    Manage Account
-    </button>
-    </Link>
     </div>
     
    
