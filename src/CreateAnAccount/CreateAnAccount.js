@@ -62,7 +62,7 @@ export default function CreateAnAccount(props) {
                 <div>
                     <input
                     name='password'
-                    ref={register({required: true, minLength: 8, pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/})}
+                    ref={register({required: true, maxLength: 71, minLength: 8, pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/})}
                     placeholder='Password' 
                     className='joinInput' 
                     type='password' 
@@ -80,6 +80,10 @@ export default function CreateAnAccount(props) {
                     )}
                      {errors.password && errors.password.type === "pattern" && (
                      <li className='create-err'> Password must contain 1 upper case, lower case, number and special character.
+                     </li>
+                    )}
+                     {errors.password && errors.password.type === "maxLength" && (
+                     <li className='create-err'> Password must be less than 72 characters.
                      </li>
                     )}
                     
