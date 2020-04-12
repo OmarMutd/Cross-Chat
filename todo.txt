@@ -6,6 +6,8 @@ Must do:
 
 
 Do if have time:
+- Ability for user to change room without logging out
+- If newpassword === oldpassword, return error message saying: 'new password can't be a password you have used before' 
 - Add max limit for room name
 - Refactor for mobile
 - Alert/Block back button

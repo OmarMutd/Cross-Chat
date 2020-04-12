@@ -6,14 +6,14 @@ import config from '../config'
 
 
 
-function ChangePassword() {
+function ChangePassword(props) {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [newpassword, setNewPassword] = useState('');
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = () => {
-        const bodyName = JSON.stringify({ name, password })
+        const bodyName = JSON.stringify({ name, password, newpassword })
         fetch(`${config.API_ENDPOINT}/names/`, {
             method: 'PATCH',
             headers: {
@@ -24,6 +24,7 @@ function ChangePassword() {
             .then(res => {
                 if (!res.ok)
                     return res.json().then(e => Promise.reject(e))
+                    props.history.push('/SignInPage')
             })
             .catch(error => {
                 console.error({ error })
