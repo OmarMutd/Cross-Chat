@@ -3,11 +3,11 @@ import './Input.css';
 
 
 
-function Input({ message, sendMessage, setMessage, room }) {
+function Input({ message, sendMessage, setMessage, room, name }) {
     return (
        <form className="form">
            <input className='input'
-           placeholder={`Send a message in ${room}`}
+           placeholder={`Hey ${name}! Type here to send a message in ${room}.`}
            value={message} 
            onChange={(event) => setMessage(event.target.value)}
            onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}

@@ -65,7 +65,7 @@ export default function ChatPage({ location }) {
             <div className='container'>
                 <ChatBar room={room} name={name} />
                 <Messages messages={messages} name={name} />
-                <Input message={message} sendMessage={sendMessage} setMessage={setMessage} room={room} />
+                <Input message={message} sendMessage={sendMessage} setMessage={setMessage} room={room} name={name} />
                 {/* <TotalUsers users={users}/> */}
                 <Link to='/ManageAccount' className='lp-text'>
                     <button className='LandingPage-button'>
