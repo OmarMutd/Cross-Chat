@@ -6,6 +6,7 @@ Must do:
 
 
 Do if have time:
+- Add max limit for room name
 - Refactor for mobile
 - Alert/Block back button
 - Display conditional error messages [when a regex criteria isn't met]

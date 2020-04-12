@@ -47,7 +47,7 @@ function ChangePassword() {
                     {errors.name && <p className='create-err'>Username is required.</p>}
 
                     <input 
-                    ref={register({required: true})} 
+                    ref={register({required: true})}
                     name='password' 
                     placeholder="Current Password" 
                     className="joinInput" 
@@ -57,15 +57,30 @@ function ChangePassword() {
                     {errors.password && <p className='create-err'>Must enter your current password.</p>}
 
                     <input 
-                    ref={register({required: true, minLength: 8})}
+                    ref={register({required: true, maxLength: 71, minLength: 8, pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/})}
                     name='newpass' 
                     placeholder="New Password" 
                     className="joinInput" 
                     type="password" 
                     onChange={(event) => setNewPassword(event.target.value)} 
                     />
-                    {errors.newpass && <p className='create-err'>Password must be at least 8 charecters, contain one uppercase and one lower case charecter, and contain one special charecter. </p>}
 
+                    {errors.newpass && errors.newpass.type === "required" && (
+                     <li className='create-err'> New Password is required.
+                     </li>
+                    )}
+                    {errors.newpass && errors.newpass.type === "minLength" && (
+                     <li className='create-err'> New Password must be a least 8 charecters.
+                     </li>
+                    )}
+                     {errors.newpass && errors.newpass.type === "pattern" && (
+                     <li className='create-err'> New Password must contain 1 upper case, lower case, number and special character.
+                     </li>
+                    )}
+                     {errors.newpass && errors.newpass.type === "maxLength" && (
+                     <li className='create-err'> New Password must be less than 72 characters.
+                     </li>
+                    )}
 
                     <button type='submit' className='delete-account-button'>
                         Confirm Change password
