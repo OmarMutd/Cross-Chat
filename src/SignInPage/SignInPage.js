@@ -8,11 +8,11 @@ import config from '../config'
 
 
 
-export default function SignInPage() {
+export default function SignInPage(props) {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
     const [password, setPassword] = useState('');
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, errors } = useForm()
 
 
     const onSubmit = () => {
@@ -46,17 +46,33 @@ export default function SignInPage() {
     <br />
                 <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <input ref={register} name='username' placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input>
+                    <input ref={register({required: true })} name='username' placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input>
+                    
+                    {/* {errors.username && errors.username.type === "required" && (
+                     <li className='create-err'> Username is required.
+                     </li>
+                    )} */}
 
-                    <input ref={register} name='password' placeholder="Password" className="joinInput" type="password" onChange={(event) => setPassword(event.target.value)} ></input>
+                    <input ref={register({required: true})} name='password' placeholder="Password" className="joinInput" type="password" onChange={(event) => setPassword(event.target.value)} ></input>
 
-                    <input ref={register} name='room-name' placeholder="Room Name" className="joinInput" type="text" onChange={(event) => setRoom(event.target.value)} ></input>
+                    {/* {errors.password && errors.password.type === "required" && (
+                     <li className='create-err'> Password is required.
+                     </li>
+                    )} */}
+
+                    <input ref={register({required: true })} name='room' placeholder="Room Name" className="joinInput" type="text" onChange={(event) => setRoom(event.target.value)} ></input>
+
+                    {/* {errors.room && errors.room.type === "required" && (
+                     <li className='create-err'> Room name is required.
+                     </li>
+                    )} */}
 
                     <Link onClick={event => (!name || !room || !password) ? event.preventDefault() : null} to={`ChatPage?name=${name}&room=${room}`}>
-                        <button disabled={!name || !password || !room} className='button'>
+                        <button className='button'>
                             Chat!
-                </button>
+                    </button>
                     </Link>
+           
                 </form>
                 <Link to='/'><button className='manage-button'> Go Back </button></Link>
             </div>

@@ -28,6 +28,7 @@ export default function CreateAnAccount(props) {
         .then((res) => {
             if (!res.ok)
               return res.json().then((e) => Promise.reject(e));
+              props.history.push('/SignInPage')
             })
         .catch((error) => {
               console.error({ error });
@@ -66,7 +67,19 @@ export default function CreateAnAccount(props) {
                     onChange={(event) => setPassword(event.target.value)} 
                     ></input> 
                     </div>
-                    {errors.password && <p className='create-err'>Password must be at least 8 charecters, contain one uppercase and one lower case charecter, and contain one special charecter. </p>}
+
+                    {errors.password && errors.password.type === "required" && (
+                     <li className='create-err'> Password is required.
+                     </li>
+                    )}
+                    {errors.password && errors.password.type === "minLength" && (
+                     <li className='create-err'> Password must be a least 8 charecters.
+                     </li>
+                    )}
+                    
+                    
+                    {/* Password must be at least 8 charecters, contain one uppercase and one lower case charecter, and contain one special charecter.  */}
+
 
                 {/* <div>
                     <input
