@@ -9,6 +9,8 @@ export default function CreateAnAccount(props) {
     const { register, handleSubmit, errors } = useForm();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    // const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/;
+
     // const [matchpassword, setMatchpassword] = useState('');
  
 
@@ -46,7 +48,7 @@ export default function CreateAnAccount(props) {
 
                 <div>
                     <input
-                    ref={register({required: true})}
+                    ref={register({required: true, })}
                     name='user'
                     placeholder='User' 
                     className='joinInput' 
@@ -60,7 +62,7 @@ export default function CreateAnAccount(props) {
                 <div>
                     <input
                     name='password'
-                    ref={register({required: true, minLength: 8})}
+                    ref={register({required: true, minLength: 8, pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/})}
                     placeholder='Password' 
                     className='joinInput' 
                     type='password' 
@@ -76,10 +78,11 @@ export default function CreateAnAccount(props) {
                      <li className='create-err'> Password must be a least 8 charecters.
                      </li>
                     )}
+                     {errors.password && errors.password.type === "pattern" && (
+                     <li className='create-err'> Password must contain 1 upper case, lower case, number and special character.
+                     </li>
+                    )}
                     
-                    
-                    {/* Password must be at least 8 charecters, contain one uppercase and one lower case charecter, and contain one special charecter.  */}
-
 
                 {/* <div>
                     <input
