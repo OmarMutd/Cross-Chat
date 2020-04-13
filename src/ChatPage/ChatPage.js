@@ -37,11 +37,6 @@ export default function ChatPage({ location }) {
 
             socket.off();
         }
-
-
-        // console.log(socket);
-        // console.log(data)
-        // console.log(location.search)
     }, [config.API_ENDPOINT, location.search]);
 
     useEffect(() => {

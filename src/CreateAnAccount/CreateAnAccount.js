@@ -9,8 +9,6 @@ export default function CreateAnAccount(props) {
     const { register, handleSubmit, errors } = useForm();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    // const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/;
-
     // const [matchpassword, setMatchpassword] = useState('');
  
 
