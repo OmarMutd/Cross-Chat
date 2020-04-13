@@ -27,6 +27,7 @@ export default function SignInPage(props) {
             .then(res => {
                 if (!res.ok)
                     return res.json().then(e => Promise.reject(e))
+                    // props.history.push(`ChatPage?name=${name}&room=${room}`)
             })
             .catch(error => {
                 console.error({ error })
@@ -48,27 +49,27 @@ export default function SignInPage(props) {
 
                     <input ref={register({required: true })} name='username' placeholder="User" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} ></input>
                     
-                    {/* {errors.username && errors.username.type === "required" && (
+                    {errors.username && errors.username.type === "required" && (
                      <li className='create-err'> Username is required.
                      </li>
-                    )} */}
+                    )}
 
                     <input ref={register({required: true})} name='password' placeholder="Password" className="joinInput" type="password" onChange={(event) => setPassword(event.target.value)} ></input>
 
-                    {/* {errors.password && errors.password.type === "required" && (
+                    {errors.password && errors.password.type === "required" && (
                      <li className='create-err'> Password is required.
                      </li>
-                    )} */}
+                    )}
 
                     <input ref={register({required: true })} name='room' placeholder="Room Name" className="joinInput" type="text" onChange={(event) => setRoom(event.target.value)} ></input>
 
-                    {/* {errors.room && errors.room.type === "required" && (
+                    {errors.room && errors.room.type === "required" && (
                      <li className='create-err'> Room name is required.
                      </li>
-                    )} */}
+                    )}
 
                     <Link onClick={event => (!name || !room || !password) ? event.preventDefault() : null} to={`ChatPage?name=${name}&room=${room}`}>
-                        <button className='button'>
+                        <button type='submit' className='button'>
                             Chat!
                     </button>
                     </Link>

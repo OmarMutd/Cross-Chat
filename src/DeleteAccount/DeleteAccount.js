@@ -27,10 +27,9 @@ function DeleteAccount(props) {
         })
             .then((res) => {
                 if (!res.ok)
-                    return res.json().then((e) => Promise.reject(e));
+                return res.json().then((e) => Promise.reject(e));
                 console.log(res.message)
-                // add a message when delete works
-                // add a message when the delete fails -> 'username & password do not match'
+                props.history.push('/')
             })
             .catch((error) => {
                 console.error({ error });
