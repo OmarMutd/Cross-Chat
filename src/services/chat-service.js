@@ -3,7 +3,7 @@ import TokenService from './token-service';
 
 const ChatService = {
   deleteUser() {
-    return fetch(`${config.API_ENDPOINT}/replies/`, {
+    return fetch(`${config.API_ENDPOINT}/api/names/`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -16,7 +16,7 @@ const ChatService = {
   },
 
 changePassword() {
-    return fetch(`${config.API_ENDPOINT}/names/`, {
+    return fetch(`${config.API_ENDPOINT}/api/names/`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

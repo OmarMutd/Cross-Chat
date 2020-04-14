@@ -16,13 +16,13 @@ export default function SignInPage(props) {
 
 
     const onSubmit = () => {
-        const bodyName = JSON.stringify({ name, password })
+        const userLogin = JSON.stringify({ name, password })
         fetch(`${config.API_ENDPOINT}/names/${name}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: bodyName,
+            body: userLogin,
         })
             .then(res => {
                 if (!res.ok)

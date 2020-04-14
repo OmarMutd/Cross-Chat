@@ -1,5 +1,4 @@
-Must do: 
-- Fully Connect front end to back end
+Must do:
 - Deploy
 - Protected routes by tokens / Auth
 - Testing 
