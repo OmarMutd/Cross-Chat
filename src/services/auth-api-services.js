@@ -1,7 +1,8 @@
 import config from '../config'
+import TokenService from './token-service'
 
 const AuthApiService = {
-  postLogin({name, password}) {
+  postLogin({name, password, props}) {
     const userLogin = JSON.stringify({ name, password })
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: 'POST',
@@ -15,21 +16,23 @@ const AuthApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      .then(res =>{
+        TokenService.saveAuthToken(res.authToken)
+      })
   },
 
   postUser(name, password, props) {
     const newUser = JSON.stringify({name, password})
-    return fetch(`${config.API_ENDPOINT}/users`, {
+    return fetch(`${config.API_ENDPOINT}/api/names`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: newUser,
     })
       .then((res) => {
         if (!res.ok)
           return res.json().then((e) => Promise.reject(e));
-          props.history.push('/SignInPage')
         })
     .catch((error) => {
           console.error({ error });

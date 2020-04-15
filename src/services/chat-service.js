@@ -6,7 +6,7 @@ const ChatService = {
     return fetch(`${config.API_ENDPOINT}/api/names/`, {
       method: 'DELETE',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })

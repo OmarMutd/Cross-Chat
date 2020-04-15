@@ -15,49 +15,33 @@ export default function CreateAnAccount(props) {
 
 
 
-    const onSubmit = () => {
-        const newUser = JSON.stringify({name, password})
-
-        fetch(`${config.API_ENDPOINT}/api/names`, {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${config.API_TOKEN}`
-        },
-        body: newUser,
-
-        })
-        .then((res) => {
-            if (!res.ok)
-              return res.json().then((e) => Promise.reject(e));
-              props.history.push('/SignInPage')
-            })
-        .catch((error) => {
-              console.error({ error });
-            });
-          };
-
-
-// const { name, password } = useState()
-
-
     // const onSubmit = () => {
-        
-    //     const username = { name, password }
-    
-    //     AuthApiService.postUser( username )
-    //       .then(req => {
-    //         useState({
-    //           name: '',
-    //           password: '',
+    //     const newUser = JSON.stringify({name, password})
+
+    //     fetch(`${config.API_ENDPOINT}/api/names`, {
+    //     method: 'POST',
+    //     headers: {
+    //     'Content-Type': 'application/json',
+    //     'Authorization': `Bearer ${config.API_TOKEN}`
+    //     },
+    //     body: newUser,
+
+    //     })
+    //     .then((res) => {
+    //         if (!res.ok)
+    //           return res.json().then((e) => Promise.reject(e));
+    //           props.history.push('/SignInPage')
     //         })
-    //       })
-    //       .catch(res => {
-    //         console.log(res.error)
-    //       })
-    
-    //     props.history.push('/SignInPage')
-    //   }
+    //     .catch((error) => {
+    //           console.error({ error });
+    //         });
+    //       };
+
+
+     const onSubmit = () => {
+     AuthApiService.postUser( name, password )
+     props.history.push('/SignInPage')
+      }
     
 
 
