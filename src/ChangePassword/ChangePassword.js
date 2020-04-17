@@ -17,7 +17,7 @@ function ChangePassword(props) {
         fetch(`${config.API_ENDPOINT}/names/`, {
             method: 'PATCH',
             headers: {
-                'content-type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: bodyName,
         })

@@ -11,6 +11,7 @@ export default function CreateAnAccount(props) {
     const { register, handleSubmit, errors } = useForm();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     // const [matchpassword, setMatchpassword] = useState('');
 
 
@@ -108,16 +109,11 @@ export default function CreateAnAccount(props) {
                  </div> */}
 
 
-                    {/* //fix this line */}
-                    {/* <Link 
-                onClick={(event) => 
-                (!name || !password) ? event.preventDefault() : null} 
-                to='/SignInPage'> */}
-                    <button className='return-button'
+                    <button type='submit' className='return-button'
                     >
                         Create Account
                 </button>
-                    {/* </Link> */}
+                    
 
                     <Link to='/'>
                         <button className='return-button'>

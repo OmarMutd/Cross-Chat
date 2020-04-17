@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './SignInPage.css'
 import { useForm } from "react-hook-form";
 import config from '../config'
+import AuthApiService from '../services/auth-api-services';
 
 
 
@@ -15,25 +16,30 @@ export default function SignInPage(props) {
     const { register, handleSubmit, errors } = useForm()
 
 
+    // const onSubmit = () => {
+    //     const userLogin = JSON.stringify({ name, password })
+    //     fetch(`${config.API_ENDPOINT}/names/${name}`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json',
+    //         },
+    //         body: userLogin,
+    //     })
+    //         .then(res => {
+    //             if (!res.ok)
+    //                 return res.json().then(e => Promise.reject(e))
+    //         })
+    //         .catch(error => {
+    //             console.error({ error })
+    //         })
+    // }
+       
     const onSubmit = () => {
-        const userLogin = JSON.stringify({ name, password })
-        fetch(`${config.API_ENDPOINT}/names/${name}`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: userLogin,
-        })
-            .then(res => {
-                if (!res.ok)
-                    return res.json().then(e => Promise.reject(e))
-                    // props.history.push(`ChatPage?name=${name}&room=${room}`)
-            })
-            .catch(error => {
-                console.error({ error })
-            })
-    }
+        AuthApiService.userLogin( name, password )
+        props.history.push('/ChatPage')
+         }
 
+      
     return (
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">

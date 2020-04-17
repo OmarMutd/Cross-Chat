@@ -8,28 +8,27 @@ import CreateAnAccount from '../CreateAnAccount/CreateAnAccount';
 import ManageAccount from '../ManageAccount/ManageAccount';
 import DeleteAccount from '../DeleteAccount/DeleteAccount';
 import ChangePassword from '../ChangePassword/ChangePassword';
-
-
-
-// import ErrorBoundary from './ErrorBoundary';
+import { ErrorBoundary } from '../ErrorBoundary';
 
 
 function App() {
   return (
-    // <ErrorBoundary>
+    <ErrorBoundary>
       <div className='App'>
        <Switch>
        <Route exact path='/' component={LandingPage} />
        <Route path='/SignInPage' component={SignInPage} />
        <Route path='/ChatPage' component={ChatPage} />
+     
        <Route path='/CreateAnAccount' component={CreateAnAccount} />
+      
        <Route path='/ManageAccount' component={ManageAccount} />
        <Route path='/DeleteAccount' component={DeleteAccount} />
        <Route path='/ChangePassword' component={ChangePassword} />
        <Route component={PageDoesNotExist} />
        </Switch>
       </div>
-    // </ErrorBoundary>
+     </ErrorBoundary>
     
   );
 }

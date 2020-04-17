@@ -16,13 +16,14 @@ const ChatService = {
   },
 
 changePassword() {
+  // const bodyName = JSON.stringify({ name, password, newpassword })
     return fetch(`${config.API_ENDPOINT}/api/names/`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({ content }),
+      // body: bodyName,
     })
       .then(res =>
         (!res.ok)

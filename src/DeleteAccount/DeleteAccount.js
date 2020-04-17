@@ -3,6 +3,7 @@ import './DeleteAccount.css';
 import config from '../config';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import ChatService from '../services/chat-service';
 
 
 function DeleteAccount(props) {
