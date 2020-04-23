@@ -36,7 +36,7 @@ export default function ChatPage({ location }) {
 
             socket.off();
         }
-    }, []);
+    }, [name, room]);
 
     useEffect(() => {
         socket.on('message', (message) => {

@@ -36,11 +36,10 @@ export default function SignInPage(props) {
                     <input name='room' placeholder="Room Name" className="joinInput" type="text" onChange={(event) => setRoom(event.target.value)} ></input>
 
 
-                    <Link onClick={event => (!name || !room || !password) ? event.preventDefault() : null} to={`ChatPage?name=${name}&room=${room}`}>
-                        <button type='submit' className='button'>
+                    <button type='submit' className='button'>
                             Chat!
                     </button>
-                    </Link>
+                    
            
                 </form>
                 <Link to='/'><button className='manage-button'> Go Back </button></Link>
