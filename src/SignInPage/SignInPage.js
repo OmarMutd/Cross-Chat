@@ -10,7 +10,7 @@ export default function SignInPage(props) {
     const [password, setPassword] = useState('');
        
     const onSubmit = () => {
-        AuthApiService.userLogin( name, password )
+        AuthApiService.userLogin( name, password, room )
         props.history.push('/ChatPage')
          }
 
