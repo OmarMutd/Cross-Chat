@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import queryString from 'query-string';
+// import queryString from 'query-string';
 import io from 'socket.io-client';
 import './ChatPage.css';
 import Messages from '../Messages/Messages';
@@ -7,21 +7,20 @@ import ChatBar from '../ChatBar/ChatBar';
 import Input from '../Input/Input';
 import config from '../config'
 import { Link } from 'react-router-dom';
-// import TotalUsers from '../TotalUsers/TotalUsers';
 
 let socket = ""
 
 export default function ChatPage({ location }) {
-    // const CONNECTION = 'localhost:5000';
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-    // const [users, setUsers] = useState('');
+   
 
 
     useEffect(() => {
-        const { name, room } = queryString.parse(location.search);
+        
+        // const {name, room} = name
 
         socket = io(config.API_ENDPOINT);
 
@@ -37,7 +36,7 @@ export default function ChatPage({ location }) {
 
             socket.off();
         }
-    }, [config.API_ENDPOINT, location.search]);
+    }, []);
 
     useEffect(() => {
         socket.on('message', (message) => {
