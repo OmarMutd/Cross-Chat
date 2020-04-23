@@ -12,7 +12,13 @@ export default function SignInPage(props) {
     const onSubmit = () => {
         AuthApiService.userLogin( name, password, room )
         props.history.push('/ChatPage')
-         }
+       
+    }
+
+        //  AuthApiService.userLogin( name, password, room )
+        //  .then(() => {
+        //            props.history.push('/chatpage')
+        //  }).catch(() => { handle if the username and password are incorrect })
 
       
     return (
