@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ChangePassword.css'
 import { Link } from 'react-router-dom';
-import config from '../config'
+import { config } from '../config'
 
 
 
@@ -22,7 +22,7 @@ function ChangePassword(props) {
             .then(res => {
                 if (!res.ok)
                     return res.json().then(e => Promise.reject(e))
-                    props.history.push('/SignInPage')
+                props.history.push('/SignInPage')
             })
             .catch(error => {
                 console.error({ error })
@@ -35,31 +35,31 @@ function ChangePassword(props) {
             <div className='joinInnerContainer'>
                 <form onSubmit={(onSubmit)}>
 
-                    <input 
-                    
-                    name='name' 
-                    placeholder="User" 
-                    className="joinInput" 
-                    type="text" 
-                    onChange={(event) => setName(event.target.value)} 
-                    />
-                   
+                    <input
 
-                    <input 
-
-                    name='password' 
-                    placeholder="Current Password" 
-                    className="joinInput" 
-                    type="password" 
-                    onChange={(event) => setPassword(event.target.value)} 
+                        name='name'
+                        placeholder="Username"
+                        className="joinInput"
+                        type="text"
+                        onChange={(event) => setName(event.target.value)}
                     />
 
-                    <input 
-                    name='newpass' 
-                    placeholder="New Password" 
-                    className="joinInput" 
-                    type="password" 
-                    onChange={(event) => setNewPassword(event.target.value)} 
+
+                    <input
+
+                        name='password'
+                        placeholder="Current Password"
+                        className="joinInput"
+                        type="password"
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
+
+                    <input
+                        name='newpass'
+                        placeholder="New Password"
+                        className="joinInput"
+                        type="password"
+                        onChange={(event) => setNewPassword(event.target.value)}
                     />
 
 
@@ -67,8 +67,8 @@ function ChangePassword(props) {
                         Confirm Change password
             </button>
                     <Link to='/ManageAccount'><button className='manage-button'> Go Back </button></Link>
-                </form>       
-                     </div>
+                </form>
+            </div>
         </div>
 
     )

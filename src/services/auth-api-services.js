@@ -1,8 +1,13 @@
-import config from '../config'
+// import { config } from '../config'
 import TokenService from './token-service'
 
+const config = {
+  API_ENDPOINT: 'http://localhost:5000',
+  TOKEN_KEY: 'secretkey000'
+}
+
 const AuthApiService = {
-  postLogin({name, password, props}) {
+  postLogin({ name, password, props }) {
     const userLogin = JSON.stringify({ name, password })
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: 'POST',
@@ -16,13 +21,13 @@ const AuthApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      .then(res =>{
+      .then(res => {
         TokenService.saveAuthToken(res.authToken)
       })
   },
 
   postUser(name, password, props) {
-    const newUser = JSON.stringify({name, password})
+    const newUser = JSON.stringify({ name, password })
     return fetch(`${config.API_ENDPOINT}/api/names`, {
       method: 'POST',
       headers: {
@@ -33,11 +38,11 @@ const AuthApiService = {
       .then((res) => {
         if (!res.ok)
           return res.json().then((e) => Promise.reject(e));
-        })
-    .catch((error) => {
-          console.error({ error });
-        });
-      }
-    }
+      })
+      .catch((error) => {
+        console.error({ error });
+      });
+  }
+}
 
 export default AuthApiService;

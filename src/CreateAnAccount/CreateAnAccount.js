@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './CreateAnAccount.css';
-// import config from '../config';
 import AuthApiService from '../services/auth-api-services';
 
 export default function CreateAnAccount(props) {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
-     const onSubmit = () => {
-     AuthApiService.postUser( name, password )
-     props.history.push('/SignInPage')
-      }
-    
+    const onSubmit = () => {
+        AuthApiService.postUser(name, password)
+        props.history.push('/SignInPage')
+    }
+
     return (
         <div className='joinOuterContainer'>
 
@@ -24,7 +23,7 @@ export default function CreateAnAccount(props) {
                     <div>
                         <input
                             name='user'
-                            placeholder='User'
+                            placeholder='Username'
                             className='joinInput'
                             type='text'
                             onChange={(event) => setName(event.target.value)}
@@ -46,7 +45,7 @@ export default function CreateAnAccount(props) {
                     >
                         Create Account
                 </button>
-                    
+
 
                     <Link to='/'>
                         <button className='return-button'>

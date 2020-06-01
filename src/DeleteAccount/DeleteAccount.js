@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './DeleteAccount.css';
-import config from '../config';
+import { config } from '../config';
 import { Link } from 'react-router-dom';
 // import ChatService from '../services/chat-service';
 
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function DeleteAccount(props) {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-  
+
 
     const onSubmit = () => {
 
@@ -23,7 +23,7 @@ function DeleteAccount(props) {
         })
             .then((res) => {
                 if (!res.ok)
-                return res.json().then((e) => Promise.reject(e));
+                    return res.json().then((e) => Promise.reject(e));
                 console.log(res.message)
                 props.history.push('/')
             })
@@ -41,7 +41,7 @@ function DeleteAccount(props) {
                 <form onSubmit={(onSubmit)}>
                     <input
                         name='user'
-                        placeholder="User"
+                        placeholder="Username"
                         className="joinInput"
                         type="text"
                         onChange={(event) => setName(event.target.value)}
