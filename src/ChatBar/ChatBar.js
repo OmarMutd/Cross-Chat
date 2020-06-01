@@ -3,9 +3,9 @@ import './ChatBar.css'
 import { Link } from 'react-router-dom';
 
 
-function ChatBar() {
+function ChatBar({ room }) {
     // removed {room} from props
-    // room = room.trim().toLowerCase();
+    room = room.trim().toLowerCase();
     return (
         <div className="infoBar">
             <div className="leftInnerContainer">
