@@ -9,7 +9,7 @@ function ChatBar({ room }) {
     return (
         <div className="infoBar">
             <div className="leftInnerContainer">
-                {/* <h2 className='roomname'>{room}</h2> */}
+                <h2 className='roomname'>{room}</h2>
                 <div className='sign-out'><button><Link className='sign-out-text' to="/">Log out</Link></button></div>
                 {/* <h4>Chatting as: {name}</h4> */}
             </div>
